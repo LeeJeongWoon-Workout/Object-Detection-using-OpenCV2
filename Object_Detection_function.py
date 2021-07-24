@@ -1,10 +1,10 @@
 import time
 
 def get_detected_img(cv_net, img_array, score_threshold, use_copied_array=True, is_print=True):
-    
+    #모델,이미지정보,기준score
     rows = img_array.shape[0]
     cols = img_array.shape[1]
-    
+    #넣는 과정에서 normalize 되므로 나중에 좌표를 원래대로 되돋리기 위해서 원본 파일의 너비,높이 정보를 저장한다.
     draw_img = None
     if use_copied_array:
         draw_img = img_array.copy()
@@ -15,7 +15,7 @@ def get_detected_img(cv_net, img_array, score_threshold, use_copied_array=True, 
     
     start = time.time()
     cv_out = cv_net.forward()
-    
+    #모델 진행
     green_color=(0, 255, 0)
     red_color=(0, 0, 255)
 
