@@ -19,3 +19,7 @@ plt.show()
   
   
   
+!tar -xvf ./pretrained/faster*.tar.gz -C ./pretrained  #압축풀기 여기에 있는 압축파일을./pretrained에 푼다.
+cv_net = cv2.dnn.readNetFromTensorflow('./pretrained/faster_rcnn_resnet50_coco_2018_01_28/frozen_inference_graph.pb', 
+                                     './pretrained/config_graph.pbtxt') #tensorflow 모델을 가져온다. frozen-inference 모델을 가져 온다. 그 후 가이드도 가져온다.
+
